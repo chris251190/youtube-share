@@ -15,11 +15,24 @@
       <td><%= video.title %></td>
       <td><%= raw youtube_embed(video.url) %></td>
       <td><%= video.text %></td>
-      <td><%= link_to 'Show', video_path(video), class: 'btn btn-primary btn-xs' %></td>
-      <td><%= link_to 'Edit', edit_video_path(video), class: 'btn btn-info btn-xs' %></td>
-      <td><%= link_to 'Destroy', video_path(video),
-              method: :delete,
-              data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+      <td>
+        <%= link_to video_path(video), class: 'btn btn-lg btn-primary' do %>
+          <i class="glyphicon glyphicon-eye-open"></i>
+        <% end %>
+      </td>
+
+      <td>
+        <%= link_to edit_video_path(video), class: 'btn btn-lg btn-info' do %>
+        <i class="glyphicon glyphicon-pencil"></i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to video_path(video), method: :delete,
+              data: { confirm: 'Are you sure?' }, class: 'btn btn-lg btn-danger' do %>
+          <i class="glyphicon glyphicon-trash"></i>
+        <% end %>
+      </td>
+      
     </tr>
   <% end %>
 </table>
