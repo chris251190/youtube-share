@@ -1,6 +1,7 @@
-<h1>Listing videos</h1>
  
-<%= link_to 'New Video', new_video_path, class: 'btn btn-success' %>
+<%= link_to new_video_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> Post new video
+<% end %>
 
 <table class="table-condensed">
   <tr>
