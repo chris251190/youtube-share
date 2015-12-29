@@ -1,33 +1,24 @@
-<table class="table-condensed">
-  <tr>
-    <th>Title</th>
-    <th>Url</th>
-    <th>Text</th>
-  </tr>
- 
   <% @videos.each do |video| %>
-    <tr>
-      <td><%= video.title %></td>
-      <td><%= raw youtube_embed(video.url) %></td>
-      <td><%= video.text %></td>
-      <td>
-        <%= link_to video_path(video), class: 'btn btn-lg btn-primary' do %>
-          <i class="glyphicon glyphicon-eye-open"></i>
-        <% end %>
-      </td>
 
-      <td>
-        <%= link_to edit_video_path(video), class: 'btn btn-lg btn-info' do %>
-        <i class="glyphicon glyphicon-pencil"></i>
-        <% end %>
-      </td>
-      <td>
-        <%= link_to video_path(video), method: :delete,
-              data: { confirm: 'Are you sure?' }, class: 'btn btn-lg btn-danger' do %>
-          <i class="glyphicon glyphicon-trash"></i>
-        <% end %>
-      </td>
-      
-    </tr>
+  <div class="jumbotron">  
+    <p><%= video.title %></p>
+    <p><%= raw youtube_embed(video.url) %></p>
+    <p><%= video.text %></p>
+    <p>
+      <%= link_to video_path(video), class: 'btn btn-lg btn-primary' do %>
+      <i class="glyphicon glyphicon-eye-open"></i>
+      <% end %>
+    
+      <%= link_to edit_video_path(video), class: 'btn btn-lg btn-info' do %>
+      <i class="glyphicon glyphicon-pencil"></i>
+      <% end %>
+
+      <%= link_to video_path(video), method: :delete,
+      data: { confirm: 'Are you sure?' }, class: 'btn btn-lg btn-danger' do %>
+      <i class="glyphicon glyphicon-trash"></i>
+      <% end %>
+    </p>    
+
+  </div>  
+
   <% end %>
-</table>
