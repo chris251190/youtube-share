@@ -2,11 +2,11 @@
 <div class="col-xs-10">
 <%= form_for([@video, @video.comments.build]) do |f| %>
   <div class="form-group">
-    <%= f.label "Name:" %><br>
+    <%= f.label :commenter, "Name:" %><br>
     <%= f.text_field :commenter, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label "Your comment:" %><br>
+    <%= f.label :body, "Your comment:" %><br>
     <%= f.text_area :body, class: "form-control" %>
   </div>
   <div class="form-group">
