@@ -1,15 +1,21 @@
+<div class="row">
+<div class="col-xs-10">
+<div class="jumbotron">
 <p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
+  <h2>Posted by <%= comment.commenter %></h2>
 </p>
  
-<p>
-  <strong>Comment:</strong>
+<p class="comment-indent">
   <%= comment.body %>
 </p>
+</div>
+</div>
+</div>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.video, comment],
+  <%= link_to [comment.video, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+               data: { confirm: 'Are you sure?' }, class: "btn btn-danger" do %>
+               <i class="glyphicon glyphicon-trash"></i>
+               <% end %>
 </p>
