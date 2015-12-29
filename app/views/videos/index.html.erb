@@ -14,6 +14,11 @@
       <td><%= video.title %></td>
       <td><%= raw youtube_embed(video.url) %></td>
       <td><%= video.text %></td>
+      <td><%= link_to 'Show', video_path(video) %></td>
+      <td><%= link_to 'Edit', edit_video_path(video) %></td>
+      <td><%= link_to 'Destroy', video_path(video),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
