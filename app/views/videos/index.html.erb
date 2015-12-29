@@ -1,8 +1,8 @@
 <h1>Listing videos</h1>
  
-<%= link_to 'New Video', new_video_path %>
+<%= link_to 'New Video', new_video_path, class: 'btn btn-success' %>
 
-<table>
+<table class="table-condensed">
   <tr>
     <th>Title</th>
     <th>Url</th>
@@ -14,11 +14,11 @@
       <td><%= video.title %></td>
       <td><%= raw youtube_embed(video.url) %></td>
       <td><%= video.text %></td>
-      <td><%= link_to 'Show', video_path(video) %></td>
-      <td><%= link_to 'Edit', edit_video_path(video) %></td>
+      <td><%= link_to 'Show', video_path(video), class: 'btn btn-primary btn-xs' %></td>
+      <td><%= link_to 'Edit', edit_video_path(video), class: 'btn btn-info btn-xs' %></td>
       <td><%= link_to 'Destroy', video_path(video),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
     </tr>
   <% end %>
 </table>
