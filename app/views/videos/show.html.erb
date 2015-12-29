@@ -13,5 +13,11 @@
   <%= @video.text %>
 </p>
 
+<h2>Comments</h2>
+<%= render @video.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
