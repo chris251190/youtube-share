@@ -1,4 +1,20 @@
-  <br><br>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-xs-5 col-centered">
+      <div class="form-group">
+
+      <form class="input-group">
+        <input type="text" class="form-control" placeholder="Search..." name="keyword" value='<%= params[:keyword] %>'></input>
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-search"></i>
+        </span>
+        </form>
+
+      </div>
+    </div>
+  </div>
   <% @videos.each do |video| %>
 
   <div class="jumbotron">  
@@ -9,7 +25,7 @@
       <%= link_to video_path(video), class: 'btn btn-lg btn-primary' do %>
       <i class="glyphicon glyphicon-eye-open"></i>
       <% end %>
-    
+
       <%= link_to edit_video_path(video), class: 'btn btn-lg btn-info' do %>
       <i class="glyphicon glyphicon-pencil"></i>
       <% end %>

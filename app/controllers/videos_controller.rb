@@ -3,7 +3,7 @@ class VideosController < ApplicationController
  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
 	def index
-		@videos = Video.all.order('created_at DESC')
+		@videos = Video.search(params[:keyword]).order('created_at DESC')
 	end
 
 	def show
@@ -33,7 +33,6 @@ class VideosController < ApplicationController
 			redirect_to @video
 		else
 			render 'edit'
-
 		end
 	end
 
