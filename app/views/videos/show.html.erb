@@ -11,6 +11,11 @@
 	<h3><%= @video.text %></h3>
 </p>
 
+
+<%= link_to root_path, class: "btn btn-lg btn-info" do %>
+<i class="glyphicon glyphicon-arrow-left"></i>
+<% end %>
+
 <!-- Raises an error if you dont check if user is logged in -->
 <% if user_signed_in? %>
 <% if current_user.id == @video.user_id %>
@@ -27,9 +32,7 @@
 <% end %>
 <% end %>
 
-<%= link_to root_path, class: "btn btn-lg btn-info" do %>
-<i class="glyphicon glyphicon-arrow-left"></i>
-<% end %>
+
 </div>
 
 <div class="jumbotron">
