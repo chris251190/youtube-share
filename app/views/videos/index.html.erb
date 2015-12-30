@@ -5,37 +5,15 @@
     <div class="col-xs-5 col-centered">
       <div class="form-group">
 
-      <form class="input-group">
-        <input type="text" class="form-control" placeholder="Search..." name="keyword" value='<%= params[:keyword] %>'></input>
-        <span class="input-group-addon">
-          <i class="glyphicon glyphicon-search"></i>
-        </span>
+        <form class="input-group">
+          <input type="text" class="form-control" placeholder="Search..." name="keyword" value='<%= params[:keyword] %>'></input>
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-search"></i>
+          </span>
         </form>
 
       </div>
     </div>
   </div>
-  <% @videos.each do |video| %>
-
-  <div class="jumbotron">  
-    <p><%= video.title %></p>
-    <p><%= raw youtube_embed(video.url) %></p>
-    <p><%= video.text %></p>
-    <p>
-      <%= link_to video_path(video), class: 'btn btn-lg btn-primary' do %>
-      <i class="glyphicon glyphicon-eye-open"></i>
-      <% end %>
-
-      <%= link_to edit_video_path(video), class: 'btn btn-lg btn-info' do %>
-      <i class="glyphicon glyphicon-pencil"></i>
-      <% end %>
-
-      <%= link_to video_path(video), method: :delete,
-      data: { confirm: 'Are you sure?' }, class: 'btn btn-lg btn-danger' do %>
-      <i class="glyphicon glyphicon-trash"></i>
-      <% end %>
-    </p>    
-
-  </div>  
-
-  <% end %>
+  
+  <%= render "video" %>

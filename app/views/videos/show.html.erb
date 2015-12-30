@@ -12,8 +12,10 @@
 </p>
 
 
+<% if current_user.id == @video.id %>
 <%= link_to edit_video_path(@video), class: "btn btn-lg btn-info" do %>
 <i class="glyphicon glyphicon-pencil"></i>
+<% end %>
 <% end %>
 
 <%= link_to videos_path, class: "btn btn-lg btn-info" do %>

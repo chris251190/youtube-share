@@ -29,13 +29,16 @@
     <%= f.text_area :text, class: "form-control" %>
   </div>
 
-  <p>
-    <%= f.check_box :public %>
-    <%= f.label  :public, "Show in public?" %>
+  <p>    
+    
+    <%= f.label :public, "Publish video", :value => "true"  %>
+    <%= f.radio_button :public, true %>
+    <%= f.label :public, "Hide video from others", :value => "false" %>
+    <%= f.radio_button :public, false %>
   </p>
  
   <p>
-    <%= f.submit 'Update Video', class: 'btn btn-primary' %>
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
   </p>
  
 <% end %>
