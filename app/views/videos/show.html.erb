@@ -16,6 +16,11 @@
 <% if current_user.id == @video.user_id %>
 <%= link_to edit_video_path(@video), class: "btn btn-lg btn-info" do %>
 <i class="glyphicon glyphicon-pencil"></i>
+
+ <%= link_to video_path(video), method: :delete,
+      data: { confirm: 'Are you sure?' }, class: 'btn btn-lg btn-danger' do %>
+      <i class="glyphicon glyphicon-trash"></i>
+      <% end %>
 <% end %>
 <% end %>
 <% end %>
