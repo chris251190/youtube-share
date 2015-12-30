@@ -9,6 +9,8 @@
       <i class="glyphicon glyphicon-eye-open"></i>
       <% end %>
 
+
+      <% if user_signed_in? %>
       <% if current_user.id == video.user_id %>
 
       <%= link_to edit_video_path(video), class: 'btn btn-lg btn-info' do %>
@@ -19,6 +21,7 @@
       data: { confirm: 'Are you sure?' }, class: 'btn btn-lg btn-danger' do %>
       <i class="glyphicon glyphicon-trash"></i>
       <% end %>
+
 
       <!-- Button to make Video public -->
 
@@ -36,6 +39,7 @@
   <% end %>
   <% end %>
 
+      <% end %>
       <% end %>
     </p>    
 
