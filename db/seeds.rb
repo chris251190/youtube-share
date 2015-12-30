@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 videos = Video.create([{ title: "Video 1", url: "https://www.youtube.com/watch?v=R8MWKsheHxk", text: "Text 1", public: true},
-					   { title: "Video 2", url: "https://www.youtube.com/watch?v=uO7kCUjUaUE", text: "Text 2", public: false},
+					   { title: "Video 2", url: "https://www.youtube.com/watch?v=uO7kCUjUaUE", text: "Text 2", public: true},
 					   { title: "Video 3", url: "https://www.youtube.com/watch?v=KTYD_kN7rPg", text: "Text 3", public: true}])
