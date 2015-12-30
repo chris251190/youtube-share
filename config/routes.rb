@@ -6,6 +6,7 @@ resources :videos do
   resources :comments
 end
 
+get "/my_videos" => "videos#my_videos", :as => 'my_videos'
   root 'videos#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

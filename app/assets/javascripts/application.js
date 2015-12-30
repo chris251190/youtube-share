@@ -15,9 +15,3 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
-// function openPopup(link)
-// {
-//     window.open(link.href,'new_video_dialog','toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=no,width=800,height=400');
-//     return false;
-// }

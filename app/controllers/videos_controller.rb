@@ -42,6 +42,12 @@ class VideosController < ApplicationController
 		redirect_to videos_path
 	end
 
+	def my_videos
+		@user = User.find(current_user)
+		@videos = @user.videos.order('created_at DESC')		
+		render 'my_videos'
+	end
+
 	private
 	def video_params
 		params.require(:video).permit(:title, :url, :text)

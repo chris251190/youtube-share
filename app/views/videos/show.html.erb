@@ -1,4 +1,4 @@
-
+<div class="jumbotron">
 <p>
 	<h1><%= @video.title %></h1>
 </p>
@@ -10,6 +10,8 @@
 <p>
 	<h3><%= @video.text %></h3>
 </p>
+
+
 <%= link_to edit_video_path(@video), class: "btn btn-lg btn-info" do %>
 <i class="glyphicon glyphicon-pencil"></i>
 <% end %>
@@ -17,17 +19,13 @@
 <%= link_to videos_path, class: "btn btn-lg btn-info" do %>
 <i class="glyphicon glyphicon-arrow-left"></i>
 <% end %>
-<br>
+</div>
+
+<div class="jumbotron">
 <hr>
-<br>
 
 <h2>Comments</h2>
 <%= render @video.comments %>
-
-<!-- remove all the <br>'s and style with css later -->
-<br>
-
-
 
 <% if user_signed_in? %>
 <hr>
@@ -43,7 +41,7 @@
 
 <% end %>
 
-
+</div>
 
 
 

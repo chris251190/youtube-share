@@ -8,19 +8,36 @@
 </head>
 <body>
 
-<header>
-  
-  
-</header>
+  <header>
 
- <div id="main-container" class="container">
-  <div class="row">
-    <div class="col-xs-2">
-      <%= link_to(image_tag('youtube25.png', class: "logo"), root_path)  %>
 
-      <%= link_to new_video_path, class: 'btn btn-warning', onclick: 'return openPopup(this);' do %>
-        <i class="glyphicon glyphicon-plus"></i> Post new video
+  </header>
+
+  <div id="main-container" class="container">
+    <div class="row">
+      <div class="col-xs-2">
+        <%= link_to(image_tag('youtube25.png', class: "logo"), root_path)  %>
+
+        <p>
+         <%= link_to new_video_path, class: 'btn btn-warning' do %>
+         <i class="glyphicon glyphicon-plus"></i> Post new video
+         <% end %>
+       </p>
+
+       <% if user_signed_in? %>
+       <p>
+         <%= link_to my_videos_path, class: 'btn btn-info' do %>
+         <i class="glyphicon glyphicon-plus"></i> Add Video to my collection
+         <% end %>
+       </p>
+
+       <p>
+        <%= link_to my_videos_path, class: "btn btn-success" do %>
+        <i class="glyphicon glyphicon-eye-open"></i> View my videos
+        <% end %>
+      </p>
       <% end %>
+
       
     </div>
     <div class="col-xs-7">    
@@ -37,12 +54,13 @@
 
     <div class="col-xs-3">
 
-    <section class="jumbotron login">
+      <section class="jumbotron login">
 
         <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.
         <%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-default" %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+
         <% else %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
         <%= link_to "Login", new_user_session_path, class: "btn btn-default"  %>
@@ -55,7 +73,7 @@
 </div>
 
 <footer>
-  
+
 </footer>
 
 </body>
