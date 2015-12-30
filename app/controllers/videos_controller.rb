@@ -1,11 +1,15 @@
 class VideosController < ApplicationController
 
- 	def index
-		@videos = Video.search(params[:keyword]).order('created_at DESC')
+	def index
+		@videos = Video.search(params[:keyword]).order('created_at DESC').where(public: true)
 	end
 
 	def show
-		@video = Video.find(params[:id])
+		if(Video.find(params[:id]).public || (user_signed_in? && current_user.id == Video.find(params[:id]).user_id)) 
+			@video = Video.find(params[:id]) 
+		else
+			redirect_to root_path
+		end
 	end
 
 	def new		
@@ -13,7 +17,11 @@ class VideosController < ApplicationController
 	end
 
 	def edit
-		@video = Video.find(params[:id])
+		if(current_user.id == Video.find(params[:id]).user_id) 
+			@video = Video.find(params[:id]) 
+		else
+			redirect_to root_path
+		end
 	end	
 
 	def create
@@ -50,6 +58,6 @@ class VideosController < ApplicationController
 
 	private
 	def video_params
-		params.require(:video).permit(:title, :url, :text)
+		params.require(:video).permit(:title, :url, :text, :public)
 	end
 end

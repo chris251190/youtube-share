@@ -26,18 +26,11 @@
 
        <% if user_signed_in? %>
        <p>
-         <%= link_to new_video_path, class: 'btn btn-info' do %>
-         <i class="glyphicon glyphicon-plus"></i> Add Video to my collection
-         <% end %>
-       </p>
-
-       <p>
         <%= link_to my_videos_path, class: "btn btn-success" do %>
         <i class="glyphicon glyphicon-eye-open"></i> View my videos
         <% end %>
       </p>
       <% end %>
-
       
     </div>
     <div class="col-xs-7">    

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230122654) do
+ActiveRecord::Schema.define(version: 20151230165619) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20151230122654) do
     t.datetime "updated_at", null: false
     t.text     "keywords"
     t.integer  "user_id"
+    t.boolean  "public"
   end
 
   add_index "videos", ["user_id"], name: "index_videos_on_user_id"

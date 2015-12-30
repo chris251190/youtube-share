@@ -28,6 +28,11 @@
     <%= f.label :text %><br>
     <%= f.text_area :text, class: "form-control" %>
   </div>
+
+  <p>
+    <%= f.check_box :public %>
+    <%= f.label  :public, "Show in public?" %>
+  </p>
  
   <p>
     <%= f.submit 'Update Video', class: 'btn btn-primary' %>
