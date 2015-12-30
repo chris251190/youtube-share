@@ -13,7 +13,7 @@
 
 <!-- Raises an error if you dont check if user is logged in -->
 <% if user_signed_in? %>
-<% if current_user.id == @video.id %>
+<% if current_user.id == @video.user_id %>
 <%= link_to edit_video_path(@video), class: "btn btn-lg btn-info" do %>
 <i class="glyphicon glyphicon-pencil"></i>
 <% end %>
