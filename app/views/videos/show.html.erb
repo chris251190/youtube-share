@@ -1,15 +1,22 @@
+
 <p>
-  <h1><%= @video.title %></h1>
+	<h1><%= @video.title %></h1>
 </p>
 
 <p>
-  <%= raw youtube_embed(@video.url) %>
-</p>
- 
-<p>
-  <h3><%= @video.text %></h3>
+	<%= raw youtube_embed(@video.url) %>
 </p>
 
+<p>
+	<h3><%= @video.text %></h3>
+</p>
+<%= link_to edit_video_path(@video), class: "btn btn-lg btn-info" do %>
+<i class="glyphicon glyphicon-pencil"></i>
+<% end %>
+
+<%= link_to videos_path, class: "btn btn-lg btn-info" do %>
+<i class="glyphicon glyphicon-arrow-left"></i>
+<% end %>
 <br>
 <hr>
 <br>
@@ -20,15 +27,23 @@
 <!-- remove all the <br>'s and style with css later -->
 <br>
 
+
+
+<% if user_signed_in? %>
 <hr>
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
 
-<%= link_to edit_video_path(@video), class: "btn btn-lg btn-info" do %>
-	<i class="glyphicon glyphicon-pencil"></i>
+<% else %>
+
+<div class="jumbotron">
+<%= link_to "Login to post a comment", new_user_session_path, class: "btn btn-primary btn-lg"  %>
+</div>
+
 <% end %>
- 
-<%= link_to videos_path, class: "btn btn-lg btn-info" do %>
-	<i class="glyphicon glyphicon-arrow-left"></i>
-<% end %>
+
+
+
+
+

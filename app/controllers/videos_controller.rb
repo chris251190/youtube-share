@@ -1,8 +1,6 @@
 class VideosController < ApplicationController
 
- http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
-
-	def index
+ 	def index
 		@videos = Video.search(params[:keyword]).order('created_at DESC')
 	end
 
@@ -19,7 +17,8 @@ class VideosController < ApplicationController
 	end	
 
 	def create
-		@video = Video.new(video_params)
+		@user = User.find(current_user)
+		@video = @user.videos.create(video_params)
 		if @video.save
 			redirect_to @video
 		else
