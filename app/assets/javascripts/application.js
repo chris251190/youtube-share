@@ -20,7 +20,7 @@
 
  $(document).ready(function(){
 
-        $(window).scroll(function(){
+        $(window).scroll(function(e){
             if ($(this).scrollTop() > 100) {
                 $('.scrollup').fadeIn();
             } else {
@@ -28,7 +28,9 @@
             }
         });
 
-        $('.scrollup').click(function(){
+        $(document).on("click", '.scrollup', function(event){
+        	event.preventDefault();
+        	
             $("html, body").animate({ scrollTop: 0 }, {
             duration: 2000,
             easing: 'swing'
@@ -37,3 +39,4 @@
         });
 
     });
+
