@@ -1,16 +1,10 @@
 <div class="jumbotron">
-<p>
-	<h1><%= @video.title %></h1>
-</p>
 
-<p>
+	<h2><%= @video.title %></h2>
+
 	<%= raw youtube_embed(@video.url) %>
-</p>
 
-<p>
 	<h3><%= @video.text %></h3>
-</p>
-
 
 <%= link_to root_path, class: "btn btn-lg btn-info" do %>
 <i class="glyphicon glyphicon-arrow-left"></i>
@@ -28,6 +22,7 @@
       data: { confirm: 'Are you sure?' }, class: 'btn btn-lg btn-danger' do %>
       <i class="glyphicon glyphicon-trash"></i>
       <% end %>
+      
 <% end %>
 <% end %>
 <% end %>
