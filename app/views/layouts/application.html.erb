@@ -19,14 +19,14 @@
         <%= link_to(image_tag('FunTube.png', class: "logo"), root_path)  %>
 
         <p>
-         <%= link_to new_video_path, class: 'btn btn-warning' do %>
+         <%= link_to new_video_path, class: 'btn btn-warning btn-lg new-video' do %>
          <i class="glyphicon glyphicon-plus"></i> Post new video
          <% end %>
        </p>
 
        <% if user_signed_in? %>
        <p>
-        <%= link_to my_videos_path, class: "btn btn-success" do %>
+        <%= link_to my_videos_path, class: "btn btn-success btn-lg my-videos" do %>
         <i class="glyphicon glyphicon-eye-open"></i> View my videos
         <% end %>
       </p>
