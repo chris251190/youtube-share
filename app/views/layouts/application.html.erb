@@ -32,11 +32,7 @@
         <% end %>
       </p>      
 
-      <% end %>
-
-      <%= link_to request.fullpath, class: "btn btn-info btn-circle btn-lg  scrollup" do %>
-      <i class="glyphicon glyphicon-arrow-up"></i>
-      <% end %>
+      <% end %>      
       
     </div>
     <div class="col-xs-8">    
@@ -56,9 +52,16 @@
 
       <%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-default" %>
 
-      <%= link_to "Login", new_user_session_path, class: "btn btn-lg btn-primary"  %>      
+      <%= link_to "Login", new_user_session_path, class: "btn btn-lg btn-primary"  %>
 
-      <% end %>      
+
+
+
+      <% end %>  
+
+      <%= link_to request.fullpath, class: "btn btn-info btn-circle btn-lg  scrollup" do %>
+      <i class="glyphicon glyphicon-arrow-up"></i>
+      <% end %>         
 
     </div>
   </div>
