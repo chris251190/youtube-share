@@ -1,6 +1,9 @@
 <div class="videolist">
+<h4>Maybe you also like:</h4>
 
-	<% @videos.each do |video| %>
+<% @random_videos = Video.all.order("Random()").first(5) %>
+<br>
+	<% @random_videos.each do |video| %>
 
 	<a name="<%= video.title %>" class="scroll-to-video list-item"><strong><%= video.title %></strong></a>
 	<hr>  
