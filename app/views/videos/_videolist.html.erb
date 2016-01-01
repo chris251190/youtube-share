@@ -1,13 +1,10 @@
 <div class="videolist">
 
-  <% @videos.each do |video| %>
+	<% @videos.each do |video| %>
 
-   
-    <a name="<%= video.title %>" class="scroll-to-video"><%= video.title %></a>
-   <hr>
+	<a name="<%= video.title %>" class="scroll-to-video list-item"><strong><%= video.title %></strong></a>
+	<hr>  
 
-   
+	<% end %>
 
-  <% end %>
-
-  </div>
+</div>

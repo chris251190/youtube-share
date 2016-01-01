@@ -64,8 +64,7 @@ $(document).on("click", ".scroll-to-video", function(e) {
 	scrollToAnchor(name);
 });
 
-
-
+$(".alert").fadeOut(2000); 
 
 });
 
