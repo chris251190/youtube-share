@@ -51,19 +51,24 @@ function resizeIframe() {
 
 $(window).resize(resizeIframe);
 
+
 //scroll to anchor
 function scrollToAnchor(aid){
 	var aTag = $("a[name='"+ aid +"']");
 	$('html,body').animate({scrollTop: aTag.offset().top},'slow');
 }
 
-$(".scroll-to-video").click(function(e) {
+$(document).on("click", ".scroll-to-video", function(e) {
 	e.preventDefault();
 	var name = $(this).attr("name");
 	scrollToAnchor(name);
-});          	        
+});
+
+
+
 
 });
+
 
 
 
