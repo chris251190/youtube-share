@@ -1,7 +1,7 @@
 <div class="videolist">
 <h4>Maybe you also like:</h4>
 
-<% @random_videos = Video.all.where(public: true).order("Random()").first(5) %>
+<% @random_videos = get_random_video_from_public %>
 <br>
 	<% @random_videos.each do |video| %>
 
