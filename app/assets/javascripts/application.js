@@ -20,6 +20,8 @@
 
  $(document).ready(function(){
 
+ 	var fullWidthOfWindow = $(window).width();
+
         $(window).scroll(function(e){
             if ($(this).scrollTop() > 100) {
                 $('.scrollup').fadeIn();
@@ -38,5 +40,19 @@
             return false;
         });
 
+
+
+       function resizeIframe() {      	
+        	var oldHeight = parseInt($(".iframe-resize").attr("height"));        	
+        	var scaleFactor = $(window).width() / fullWidthOfWindow;      	
+        	var newHeight = oldHeight * scaleFactor;        	
+        	$(".iframe-resize").css('height', newHeight);  
+      	}
+
+      	$(window).resize(resizeIframe);          	        
+
     });
+
+
+ 
 
