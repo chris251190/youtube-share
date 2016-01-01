@@ -1,5 +1,5 @@
 
-<div class="jumbotron">
+<div class="jumbotron col-centered form">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-group" }) do |f| %>
@@ -32,11 +32,15 @@
   <br>
 
   <div class="actions">
-    <%= f.submit "Update", class: "btn btn-success" %>
+    <%= f.submit "Update", class: "btn btn-primary" %>
   </div>
 <% end %>
+<br>
+<hr>
 
-<h3>Cancel my account</h3>
+
+
+<h3>Delete account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 

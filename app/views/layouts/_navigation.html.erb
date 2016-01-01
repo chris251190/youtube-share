@@ -1,0 +1,22 @@
+<!-- app/views/shared/_navigation.html.erb -->
+<% if user_signed_in? %>
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container">
+		<div class="navbar-header">   
+			<span class="navbar-brand">Hello <strong><%= current_user.email %></strong>!</span>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-default navbar-btn" %>
+			<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary navbar-btn" %>
+		</ul>		
+
+</div>
+</nav>
+
+<% end %>
+
+
+
+
+
+
