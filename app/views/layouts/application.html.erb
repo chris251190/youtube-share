@@ -10,15 +10,14 @@
 
   <header>
 
-
-  <%= render "layouts/navigation"%>
+    <%= render "layouts/navigation"%>
 
   </header>
 
   <div id="main-container" class="container">
     <div class="row">
       <div class="col-xs-2">
-        <%= link_to(image_tag('FunTube.png', class: "logo"), root_path)  %>
+        <%= link_to(image_tag('share.png', class: "logo"), root_path)  %>
 
         <p>
          <%= link_to new_video_path, class: 'btn btn-warning btn-lg new-video' do %>
@@ -32,12 +31,12 @@
         <i class="glyphicon glyphicon-eye-open"></i> View my videos
         <% end %>
       </p>      
-    
+
       <% end %>
 
-       <%= link_to request.fullpath, class: "btn btn-info btn-circle btn-lg  scrollup" do %>
-        <i class="glyphicon glyphicon-arrow-up"></i>
-        <% end %>
+      <%= link_to request.fullpath, class: "btn btn-info btn-circle btn-lg  scrollup" do %>
+      <i class="glyphicon glyphicon-arrow-up"></i>
+      <% end %>
       
     </div>
     <div class="col-xs-8">    
@@ -53,17 +52,14 @@
     </div>
 
     <div class="col-xs-2 login">      
-        <% if !user_signed_in? %> 
+      <% if !user_signed_in? %> 
 
-             
-  
-    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-default" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-default" %>
 
-    <%= link_to "Login", new_user_session_path, class: "btn btn-lg btn-primary"  %>
-    
+      <%= link_to "Login", new_user_session_path, class: "btn btn-lg btn-primary"  %>      
 
-    <% end %>
-  
+      <% end %>
+
     </div>
   </div>
 </div>
