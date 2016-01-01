@@ -18,41 +18,53 @@
 //= require_tree .
 
 
- $(document).ready(function(){
+$(document).ready(function(){
 
- 	var fullWidthOfWindow = $(window).width();
+	var fullWidthOfWindow = $(window).width();
 
-        $(window).scroll(function(e){
-            if ($(this).scrollTop() > 100) {
-                $('.scrollup').fadeIn();
-            } else {
-                $('.scrollup').fadeOut();
-            }
-        });
+	$(window).scroll(function(e){
+		if ($(this).scrollTop() > 100) {
+			$('.scrollup').fadeIn();
+		} else {
+			$('.scrollup').fadeOut();
+		}
+	});
 
-        $(document).on("click", '.scrollup', function(event){
-        	event.preventDefault();
-        	
-            $("html, body").animate({ scrollTop: 0 }, {
-            duration: 2000,
-            easing: 'swing'
-        });
-            return false;
-        });
+	$(document).on("click", '.scrollup', function(event){
+		event.preventDefault();
 
-
-
-       function resizeIframe() {      	
-        	var oldHeight = parseInt($(".iframe-resize").attr("height"));        	
-        	var scaleFactor = $(window).width() / fullWidthOfWindow;      	
-        	var newHeight = oldHeight * scaleFactor;        	
-        	$(".iframe-resize").css('height', newHeight);  
-      	}
-
-      	$(window).resize(resizeIframe);          	        
-
-    });
+		$("html, body").animate({ scrollTop: 0 }, {
+			duration: 2000,
+			easing: 'swing'
+		});
+		return false;
+	});
 
 
- 
+//Resize iFrames
+function resizeIframe() {      	
+	var oldHeight = parseInt($(".iframe-resize").attr("height"));        	
+	var scaleFactor = $(window).width() / fullWidthOfWindow;      	
+	var newHeight = oldHeight * scaleFactor;        	
+	$(".iframe-resize").css('height', newHeight);  
+}
+
+$(window).resize(resizeIframe);
+
+//scroll to anchor
+function scrollToAnchor(aid){
+	var aTag = $("a[name='"+ aid +"']");
+	$('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
+
+$(".scroll-to-video").click(function(e) {
+	e.preventDefault();
+	var name = $(this).attr("name");
+	scrollToAnchor(name);
+});          	        
+
+});
+
+
+
 
