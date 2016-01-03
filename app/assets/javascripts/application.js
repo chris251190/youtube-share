@@ -64,7 +64,25 @@ $(document).on("click", ".scroll-to-video", function(e) {
 	scrollToAnchor(name);
 });
 
+//notifications will fade out after 2 seconds
 $(".alert").fadeOut(2000); 
+
+
+
+//videolist cant be scrolled to the very top
+$(window).scroll(function() {
+	if($(window).scrollTop() > 200) {
+		$(".videolist").css("position", "fixed");
+		$(".videolist").css("max-width", "15%");
+		$(".videolist").css("margin-top", "0%");
+		
+	} else {
+		$(".videolist").css("position", "relative");
+		$(".videolist").css("max-width", "100%");		
+		$(".videolist").css("margin-top", "70%");
+	}
+});
+
 
 });
 
