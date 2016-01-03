@@ -79,7 +79,7 @@ $(window).scroll(function() {
 	} else {
 		$(".videolist").css("position", "relative");
 		$(".videolist").css("max-width", "100%");		
-		$(".videolist").css("margin-top", "70%");
+		$(".videolist").css("margin-top", "95%");
 	}
 });
 
