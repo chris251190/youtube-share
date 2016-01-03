@@ -47,7 +47,8 @@
       <%= yield %>
     </div>
 
-    <div class="col-xs-2 login">      
+    <div class="col-xs-2 login">
+
       <% if !user_signed_in? %> 
 
       <%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-default" %>
@@ -61,7 +62,8 @@
       <% end %>   
 
 
-      <%= render "videolist" %>
+      <%= render "videolist" if @videos!= nil %>
+
 
     </div>
   </div>
