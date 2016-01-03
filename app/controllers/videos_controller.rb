@@ -59,7 +59,7 @@ class VideosController < ApplicationController
 
 	def my_videos
 		@user = User.find(current_user)
-		@videos = @user.videos.order('created_at DESC')		
+		@videos = @user.videos.order('created_at DESC').paginate(:page => params[:page], :per_page => 5)	
 		render 'my_videos'
 	end
 
