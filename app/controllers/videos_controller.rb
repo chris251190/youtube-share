@@ -1,7 +1,8 @@
 class VideosController < ApplicationController
 
 	def index
-		@videos = Video.search(params[:keyword]).order('created_at DESC').where(public: true)
+		@videos = Video.search(params[:keyword]).order('created_at DESC').where(public: true).paginate(:page => params[:page], :per_page => 5)
+
 	end
 
 	def show

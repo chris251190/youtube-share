@@ -34,7 +34,7 @@ $(document).ready(function(){
 		event.preventDefault();
 
 		$("html, body").animate({ scrollTop: 0 }, {
-			duration: 2000,
+			duration: 1000,
 			easing: 'swing'
 		});
 		return false;
